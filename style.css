@@ -20,7 +20,7 @@ body::before {
     pointer-events: none;
     background-image: url(images/noise.png);
 
-    opacity: 0.4;
+    opacity: 0.1;
     mix-blend-mode: darken;
 
     animation: noise steps(3) 1s infinite;
@@ -36,6 +36,11 @@ h1 {
     font-family: "Libre Baskerville", serif;
     font-weight: 1000;
     font-style: italic;
+
+    font-size: 150px;
+
+    text-align: left;
+    margin: 0 35px;
 }
 
 h2 {
@@ -59,15 +64,41 @@ h3 {
 }
 
 .box {
-    background-color: #000000;
-    color: #ffffff;
-
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
     text-align: center;
+    transition: all .15s;
+}
+
+.box img {
+    padding: 10px;
+}
+
+.black {
+    background-color: #000000;
+    color: #ffffff;
+
+    border-style: solid;
+    border-width: 0;
+    inset: 2px;
+    border-color: #ffffff;
+}
+
+.white {
+    background-color: #ffffff;
+    color: #000000;
+    
+    border-style: solid;
+    border-width: 2px;
+    inset: 2px;
+    border-color: #000000;
+}
+
+.box:hover {
+    border-width: 4px;
 }
 
 .wide {
@@ -76,4 +107,21 @@ h3 {
 
 .tall {
     grid-row: span 2;
+}
+
+
+@media only screen and (max-width: 749px) { 
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        height: 200vh;
+    }
+
+    .box {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
 }
