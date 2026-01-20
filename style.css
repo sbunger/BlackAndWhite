@@ -257,7 +257,7 @@ a {
 @media only screen and (max-width: 749px) { 
     .grid {
         grid-template-columns: repeat(1, 1fr);
-        height: 250vh;
+        height: 300vh;
         width: 100%;
     }
 
